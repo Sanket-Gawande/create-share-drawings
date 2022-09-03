@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+#root{
+    height: 100%;
+}
+
+a.active{
+    background: #0072e5;
+    color: #fff;
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+    background: #eee;
+}
+::-webkit-scrollbar-track{
+    background: #ddd;
+}
+
+.home-grid{
+    grid-template-columns: .95fr .95fr;
+}
