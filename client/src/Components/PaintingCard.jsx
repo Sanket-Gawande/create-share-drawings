@@ -16,8 +16,9 @@ const PaintingCard = ({ obj }) => {
        
         <CanvasDraw ref={cnvsref} disabled canvasWidth={250} canvasHeight={150} className="w-full object-cover border-b" hideGrid />
         <h4 className='w-full px-4  my-0 text-[14px] font-semibold'>{obj.name || "majnu bhai"}</h4>
-        <span className='text-slate-800 text-[12px] px-4'>🖌️ 22-jan-2022</span>
+        <span className='text-slate-800 text-[12px] px-4'>🖌️ {new Date(obj.createdOn).toLocaleString("en-us")}</span>
       </div>
+      {console.log(obj)}
     </Link>
   )
 }

@@ -1,31 +1,32 @@
+@import url('http://fonts.cdnfonts.com/css/euclid-circular-a');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-html{
-    height: 100%;
+html {
+  height: 100%;
 }
-body{
-    height: 100%;
+body {
+  height: 100%;
+  font-family: 'Euclid Circular A', sans-serif;
 }
-#root{
-    height: 100%;
-}
-
-a.active{
-    background: #0072e5;
-    color: #fff;
+#root {
+  height: 100%;
 }
 
-::-webkit-scrollbar{
-    width: 4px;
-    background: #eee;
-}
-::-webkit-scrollbar-track{
-    background: #ddd;
+a.active {
+  background: #0072e5;
+  color: #fff;
 }
 
-.home-grid{
-    grid-template-columns: .95fr .95fr;
+::-webkit-scrollbar {
+  width: 4px;
+  background: #eee;
+}
+::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+.home-grid {
+  grid-template-columns: 0.95fr 0.95fr;
 }

@@ -91,10 +91,10 @@ const Home = () => {
                         <form method='post' onSubmit={createPainting} className="w-max mx-auto">
                             <p className='mt-4 '>give name to your art</p>
                             <input className='py-2 px-4 outline-none border border-slate-700 focus:border-primary  rounded-lg my-2' type="text" placeholder='eg. monalisa' onInput={e => setName(e.target.value)} value={name} required />
-                            <span className='space-x-4 flex justify-between mt-2'>
+                            <span className='space-x-2 flex justify-between mt-2'>
 
-                                <button className='bg-white shadow-md text-green-500 rounded-lg flex-1 py-2 px-4 md:mx-4 hover:bg-green-200 hover:shadow-none block md:inline-block'>Lets go ✅</button>
-                                <p className='bg-white text-center shadow-md text-red-500 rounded-lg py-2  flex-1  border hover:bg-red-200 px-4 md:mx-4 block hover:shadow-none md:inline-block' onClick={() => setModal(false)}>Cancel 🚫</p>
+                                <button className='bg-white shadow-md text-green-500 rounded-lg flex-1 py-2 px-4 hover:bg-green-200 hover:shadow-none block md:inline-block w-max'>Lets go ✅</button>
+                                <p className='bg-white text-center shadow-md text-red-500 rounded-lg py-2  flex-1  min-w-max border hover:bg-red-200 px-4  block hover:shadow-none md:inline-block' onClick={() => setModal(false)}>Cancel 🚫</p>
                             </span>
                         </form>
                     </div>

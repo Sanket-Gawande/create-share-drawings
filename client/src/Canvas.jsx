@@ -154,10 +154,10 @@ const Canvas = () => {
                         <form method='post' className="w-max mx-auto" onSubmit={shareDrawing}>
                             <p className='mt-4 '>Enter username</p>
                             <input className='py-2 px-4 outline-none border border-slate-700 focus:border-primary  rounded-lg my-2' type="text" list='username-list' placeholder='eg. mycoolfriend' onInput={e => setShareTo(e.target.value)} value={shareTo} required />
-                            <span className='space-x-4 flex justify-between mt-2'>
+                            <span className='flex justify-between mt-2 space-x-2'>
 
-                                <button className='bg-white shadow-md text-green-500 rounded-lg flex-1 py-2 px-4 md:mx-4 hover:bg-green-200 hover:shadow-none block md:inline-block' ref={shareBtn}>Share  📩</button>
-                                <p className='bg-white text-center shadow-md text-red-500 rounded-lg py-2  flex-1  border hover:bg-red-200 px-4 md:mx-4 block hover:shadow-none md:inline-block' onClick={() => setModal(false)}>Cancel 🚫</p>
+                                <button className='bg-white shadow-md min-w-max text-green-500 rounded-lg flex-1 py-2 px-4  hover:bg-green-200 hover:shadow-none block md:inline-block' ref={shareBtn}>Share  📩</button>
+                                <p className='bg-white text-center shadow-md min-w-max text-red-500 rounded-lg py-2  flex-1  border hover:bg-red-200 px-4 block hover:shadow-none md:inline-block' onClick={() => setModal(false)}>Cancel 🚫</p>
                             </span>
                         </form>
                     </div>
