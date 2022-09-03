@@ -66,6 +66,8 @@ LoginRouter.post("/create", async (req, res) => {
     const dbres = await userModel.create({
       ...req.body,
       password: hashPass,
+      shared: [],
+      paintings:[],
     });
     res.cookie("user_project_28", JSON.stringify(dbres), {
       httpOnly: true,
@@ -76,6 +78,7 @@ LoginRouter.post("/create", async (req, res) => {
       user: dbres,
     });
   } catch (error) {
+    console.log({error})
     res.send({
       status: false,
       msg: "username already exist",

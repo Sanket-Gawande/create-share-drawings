@@ -12,7 +12,7 @@ const paintingScheme = mongoose.Schema({
     default: '{"lines":[],"width":1000,"height":700}',
   },
   owner: String,
-  id: { ...reqString, unique: true },
+  id: String,
   createdOn: {
     type: Date,
     default: Date.now(),
