@@ -16,7 +16,7 @@ app.use(
     methods: ["post", "get"],
   })
 );
-app.use(express.json());
+app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: false }));
 app.use("/v1/api", LoginRouter);
 app.use("/v1/api", workRouter);
