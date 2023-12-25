@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({path :".env.local"});
 import LoginRouter from "./routes/login.js";
 import workRouter from "./routes/saveWork.js";
 import shareRouter from "./routes/sharework.js";
@@ -12,7 +12,7 @@ const app = express();
 // applying middlewares
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: ["http://localhost:3000", "http://localhost:5173", process.env.CLIENT_URL],
     methods: ["post", "get"],
   })
 );
@@ -40,6 +40,6 @@ mongoose.connect(
         console.log(`connected to server , http://localhost:${PORT}`);
       });
     }
-    console.log(error);
+    console.log({connectionError :error});
   }
 );

@@ -13,7 +13,7 @@ LoginRouter.post("/login", async (req, res) => {
   if (!password || !username) {
     res.send({
       status: false,
-      msg: "All fields are neseccery",
+      msg: "All fields are necessary",
     });
     return;
   }
@@ -27,7 +27,7 @@ LoginRouter.post("/login", async (req, res) => {
     });
     return;
   }
-  // checking password by comapring hash
+  // checking password by comparing hash
   const result = bcryptjs.compareSync(password, q.password);
   if (!result) {
     res.send({
@@ -63,22 +63,22 @@ LoginRouter.post("/create", async (req, res) => {
   }
   const hashPass = bcryptjs.hashSync(confirm_password, 10);
   try {
-    const dbres = await userModel.create({
+    const akg = await userModel.create({
       ...req.body,
       password: hashPass,
       shared: [],
-      paintings:[],
+      paintings: [],
     });
-    res.cookie("user_project_28", JSON.stringify(dbres), {
+    res.cookie("user_project_28", JSON.stringify(akg), {
       httpOnly: true,
       secure: true,
     });
     res.send({
       status: true,
-      user: dbres,
+      user: akg,
     });
   } catch (error) {
-    console.log({error})
+    console.log({ error })
     res.send({
       status: false,
       msg: "username already exist",
@@ -92,13 +92,13 @@ LoginRouter.post("/create", async (req, res) => {
 LoginRouter.get("/users", async (req, res) => {
 
   try {
-    const dbres = await userModel.find({
-     
-    } , {username : 1});
-   
+    const akg = await userModel.find({
+
+    }, { username: 1 });
+
     res.send({
       status: true,
-      user: dbres,
+      user: akg,
     });
   } catch (error) {
     res.send({

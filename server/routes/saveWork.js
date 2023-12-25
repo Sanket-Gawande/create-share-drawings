@@ -17,12 +17,12 @@ workRouter.post("/getWork", async (req, res) => {
     return;
   }
   try {
-    const dbres = await userModel.findOne(
+    const akg = await userModel.findOne(
       { "paintings.id": id },
       { paintings: { $elemMatch: { id } } }
     );
 
-    res.send({ status: true, data: dbres });
+    res.send({ status: true, data: akg });
   } catch (error) {
     console.log(error);
     res.send({
@@ -48,11 +48,11 @@ workRouter.post("/getWorks", async (req, res) => {
     return;
   }
   try {
-    const dbres = await userModel.findOne(
+    const akg = await userModel.findOne(
       { username },
       { paintings: 1, shared: 1 }
     );
-    res.send({ status: true, data: dbres });
+    res.send({ status: true, data: akg });
   } catch (error) {
     console.log(error);
     res.send({
@@ -78,7 +78,7 @@ workRouter.post("/createWork", async (req, res) => {
     return;
   }
   try {
-    const dbres = await userModel.findOneAndUpdate(
+    const akg = await userModel.findOneAndUpdate(
       { username },
       {
         $push: {
@@ -91,7 +91,7 @@ workRouter.post("/createWork", async (req, res) => {
       }
     );
 
-    res.send({ status: true, data: dbres, id });
+    res.send({ status: true, data: akg, id });
   } catch (error) {
     console.log(error);
     res.send({
@@ -117,7 +117,7 @@ workRouter.post("/updateWork", async (req, res) => {
     return;
   }
   try {
-    const dbres = await userModel.findOneAndUpdate(
+    const akg = await userModel.findOneAndUpdate(
       { username, "paintings.id": id },
       {
         $set: {
@@ -126,7 +126,7 @@ workRouter.post("/updateWork", async (req, res) => {
       }
     );
 
-    res.send({ status: true, data: dbres, id });
+    res.send({ status: true, data: akg, id });
   } catch (error) {
     console.log(error);
     res.send({
