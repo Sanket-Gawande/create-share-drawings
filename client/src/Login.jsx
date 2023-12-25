@@ -36,7 +36,7 @@ const Login = () => {
       const response = await req.json();
       // console.log(response);
       if (response.status) {
-        localStorage.setItem("user_project_28", JSON.stringify(response.user));
+        localStorage.setItem("drawing_app_user", JSON.stringify(response.user));
         ctx?.setUser(response.user);
         navigate("/");
         return;

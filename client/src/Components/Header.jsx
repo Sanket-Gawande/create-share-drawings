@@ -7,7 +7,7 @@ const Header = () => {
   const ctx = useContext(UserCTX);
   const logout = () => {
     ctx.setUser(null);
-    localStorage.removeItem("user_project_28");
+    localStorage.removeItem("drawing_app_user");
   };
   const navigation = useNavigate();
   useEffect(() => {

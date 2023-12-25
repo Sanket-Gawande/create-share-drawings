@@ -6,7 +6,7 @@ const UserCTX = createContext();
 export const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("user_project_28")));
+    setUser(JSON.parse(localStorage.getItem("drawing_app_user")));
   }, []);
 
   return (
